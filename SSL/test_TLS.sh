@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+echo needs work in area of return from iteration over all ciphers, even when :error: is present it displays 'Cipher:    ' -> reorder
+
+exit 0
+
 # spin-off and improvements from test_cipher.sh script
 # andreas@naund.org, Tue Mar 19 07:03:55 UTC 2019
 
