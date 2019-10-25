@@ -24,7 +24,7 @@ echo ${MY_UNAME} | /usr/bin/tee -a /var/log/freebsd-update.log 2>&1
 #no
 if [ X$? = "X0" ] ; then
         echo done ;
-        /usr/bin/logger $0 determined that no updates are needed
+        /usr/bin/logger $0 determined that no updates are needed ;
         exit 0 ;                # exit right here, and skip reboot
 fi
 #yes
