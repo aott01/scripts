@@ -11,9 +11,6 @@ PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 MY_UNAME=`/usr/bin/uname -a`
 ### END OF VARIABLES
 
-# invoke self-destruction and explode if something goes wrong
-set -e
-
 echo "######## $0 ########" | /usr/bin/tee -a /var/log/freebsd-update.log 2>&1
 /bin/date | /usr/bin/tee -a /var/log/freebsd-update.log 2>&1
 /bin/freebsd-version -ku | /usr/bin/tee -a /var/log/freebsd-update.log 2>&1
