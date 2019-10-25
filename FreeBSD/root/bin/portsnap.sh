@@ -11,10 +11,3 @@
 /usr/bin/logger $0 completed
 exit 0
 ###EOF script
-#
-# $Log: portsnap.sh,v $
-# Revision 1.1  2018/10/10 18:47:54  andreas
-# runs portsnap fetch/extract/update
-#
-# first time under CVS
-#
