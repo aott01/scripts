@@ -1,3 +1,5 @@
+# $Id$
+
 echo WARNING: the device name has been set to /dev/sdzz (Linux "SCSI" hard drive number 26*26), but use this at your own risk.
 echo Once lost, you data cannot be recovered, it is lost FOREVER! This is the point of running the script.
 
