@@ -133,6 +133,7 @@ cd /usr/freebsd-src
 # 7. after deleting stuff, update packages (yo, missing libs anyone?)
 /usr/sbin/pkg update -f | /usr/bin/tee -a /var/log/ci-pkg-update 2>&1
 /usr/sbin/pkg upgrade -y | /usr/bin/tee -a /var/log/ci-pkg-upgrade 2>&1
+/usr/sbin/pkg clean -y | /usr/bin/tee -a /var/log/ci-pkg-upgrade 2>&1
 
 # 8. tests
 cd /usr/tests/
