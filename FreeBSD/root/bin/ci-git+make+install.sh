@@ -131,6 +131,8 @@ cd /usr/freebsd-src
 /usr/bin/yes|/usr/bin/make delete-old-dirs | /usr/bin/tee -a /var/log/ci-make-delete 2>&1
 
 # 7. after deleting stuff, update packages (yo, missing libs anyone?)
+/usr/sbin/portsnap fetch | /usr/bin/tee /var/log/portsnap.log 2>&1
+/usr/sbin/portsnap update | /usr/bin/tee -a /var/log/portsnap.log 2>&1
 /usr/sbin/pkg update -f | /usr/bin/tee -a /var/log/ci-pkg-update 2>&1
 /usr/sbin/pkg upgrade -y | /usr/bin/tee -a /var/log/ci-pkg-upgrade 2>&1
 /usr/sbin/pkg clean -y | /usr/bin/tee -a /var/log/ci-pkg-upgrade 2>&1
