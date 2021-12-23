@@ -1,7 +1,7 @@
 #/bin/sh
 
 # adopted from... $Id: get-ISO-files.sh,v 1.18 2021/02/02 20:39:35 andreas Exp $
-# prepoluate mirror ISOs
+# prepoluate mirror ISOs on ESXi host
 # NOTES: 
 #       onboard wget busybox call binary does not do https://
 #       no bunzip2 (on ESXi 6.5) or unxz to uncompress images
@@ -10,11 +10,17 @@
 #mkdir -p ISOs
 #cd ISOs
 
-mkdir -p ./CentOS
-cd CentOS 
-wget -c http://mirrors.edge.kernel.org/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso
+#mkdir -p ./CentOS
+#cd CentOS 
+#wget -c http://mirrors.edge.kernel.org/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso
 #
-wget -c http://mirrors.edge.kernel.org/centos/8.3.2011/isos/x86_64/CentOS-8.3.2011-x86_64-dvd1.iso
+#wget -c http://mirrors.edge.kernel.org/centos/8.3.2011/isos/x86_64/CentOS-8.3.2011-x86_64-dvd1.iso
+#cd ..
+
+mkdir -p ./almalinux
+cd almalinux
+wget -c http://la.mirrors.clouvider.net/almalinux/8.5/isos/x86_64/AlmaLinux-8.5-x86_64-dvd.iso
+#wget -c http://mirror.hostduplex.com/almalinux/8.5/isos/x86_64/AlmaLinux-8.5-x86_64-dvd.iso
 cd ..
 
 mkdir -p ./FreeBSD
