@@ -14,7 +14,7 @@ echo "######## $0 ########" | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>
 echo "pkg update" | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
 /usr/local/sbin/pkg update 2>&1 | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
 # check versions
-/usr/local/sbin/pkg version all |grep -v = 2>&1 | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
+/usr/local/sbin/pkg version |grep -v = 2>&1 | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
 # upgrade
 echo "pkg upgrade" | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
 /usr/local/sbin/pkg upgrade 2>&1 | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
@@ -24,7 +24,7 @@ echo "pkg upgrade" | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
 /usr/local/sbin/pkg autoremove 2>&1 | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
 
 # check again for versions not equal, then run portupgrade
-#/usr/local/sbin/pkg version all |grep -v = 2>&1 | /usr/bin/tee -a /var/log/portupgrade-arv.log 2>&1
+#/usr/local/sbin/pkg version |grep -v = 2>&1 | /usr/bin/tee -a /var/log/portupgrade-arv.log 2>&1
 #BATCH=YES /usr/local/sbin/portupgrade -arv 2>&1 | /usr/bin/tee -a /var/log/portupgrade-arv.log 2>&1
 #/usr/local/sbin/portsclean -CD 2>&1 | /usr/bin/tee -a /var/log/portupgrade-arv.log 2>&1
 
