@@ -28,7 +28,8 @@ cd FreeBSD
 #
 #wget -c http://ftp4.us.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/11.4/FreeBSD-11.4-RELEASE-amd64-dvd1.iso
 #
-wget -c https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/12.3/FreeBSD-12.3-RELEASE-amd64-dvd1.iso
+#wget -c https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/12.3/FreeBSD-12.3-RELEASE-amd64-dvd1.iso
+wget -c https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/12.4/FreeBSD-12.4-RELEASE-amd64-dvd1.iso
 #
 wget -c https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/13.1/FreeBSD-13.1-RELEASE-amd64-dvd1.iso
 cd ..
