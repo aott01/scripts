@@ -65,6 +65,7 @@ cd ..
 mkdir -p OPNsense
 cd OPNsense
 #wget -vc http://mirror.sfo12.us.leaseweb.net/opnsense/releases/22.7/OPNsense-22.7-OpenSSL-dvd-amd64.iso.bz2
+wget -c http://mirror.sfo12.us.leaseweb.net/opnsense/releases/23.1/OPNsense-23.1-OpenSSL-dvd-amd64.iso.bz2
 #bunzip2 OPNsense-22.7-OpenSSL-dvd-amd64.iso.bz2
 cd ..
 
