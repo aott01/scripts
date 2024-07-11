@@ -1,8 +1,9 @@
 #!/bin/sh
 
-#Ubuntu 22.04 uses /var/run/needrestart/
-#TODO: ?Ubunttu 24.04?, Ubuntu 20.04 see below
+#check /var/run/needrestart/ for processes that need restarting
+#Ubuntu 20.04 and 22.04 will indicate need for system reboot
 set -ev
+#set -x
 
 /usr/bin/apt-get update
 /usr/bin/apt list --upgradable
@@ -12,9 +13,14 @@ set -ev
 /usr/bin/tac /var/log/apt/history.log | /usr/bin/awk '!flag; /Start-Date: /{flag = 1};' | /usr/bin/tac
 
 /usr/bin/grep VERSION= /etc/os-release 
+
+set +e
+# this will error out if directory does not exist
 /usr/bin/ls -lart /var/run/needrestart/
 # show content of file(s)
 
-#for Ubuntu 20.04 LTS
-# /usr/bin/ls -lart /var/run/reboot-required*
-# /usr/bin/grep -nH . /var/run/reboot-required*
+if [ -f /var/run/reboot-required ]
+then
+  /usr/bin/ls -lart /var/run/reboot-required*
+  /usr/bin/grep -nH . /var/run/reboot-required*
+fi
