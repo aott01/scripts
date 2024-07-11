@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#Ubuntu 22.04 uses /var/run/needrestart/
+#TODO: ?Ubunttu 24.04?, Ubuntu 20.04 see below
 set -ev
 
 /usr/bin/apt-get update
@@ -11,3 +13,8 @@ set -ev
 
 /usr/bin/grep VERSION= /etc/os-release 
 /usr/bin/ls -lart /var/run/needrestart/
+# show content of file(s)
+
+#for Ubuntu 20.04 LTS
+# /usr/bin/ls -lart /var/run/reboot-required*
+# /usr/bin/grep -nH . /var/run/reboot-required*
