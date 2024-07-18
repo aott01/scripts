@@ -14,6 +14,7 @@ set -ev
 
 /usr/bin/grep VERSION= /etc/os-release 
 
+set +e
 if [ -f /var/run/needrestart/* ]
 then    
   /usr/bin/grep -nH . /var/run/needrestart/*
