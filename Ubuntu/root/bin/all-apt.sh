@@ -14,10 +14,13 @@ set -ev
 
 /usr/bin/grep VERSION= /etc/os-release 
 
-set +e
-# this will error out if directory does not exist
-/usr/bin/ls -lart /var/run/needrestart/
-# show content of file(s)
+if [ -f /var/run/needrestart/* ]
+then    
+  /usr/bin/grep -nH . /var/run/needrestart/*
+  /usr/bin/ls -lart /var/run/needrestart/
+else    
+  /usr/bin/ls -lart /var/run/needrestart/
+fi
 
 if [ -f /var/run/reboot-required ]
 then
