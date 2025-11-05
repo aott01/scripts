@@ -3,6 +3,7 @@ originally from dev2.sjelab.net
 called as https://dev2.sjelab.net/inv/dsulog.php with -X POST
 
 - needs some apache2 config bits to let php be executable, port 80 and port 443 configs
+```
     httpd.conf:LoadModule php_module         libexec/apache24/libphp.so
     
     httpd.conf:#mod_php80
@@ -17,3 +18,4 @@ called as https://dev2.sjelab.net/inv/dsulog.php with -X POST
     extra/httpd-ssl.conf:    SetHandler application/x-httpd-php
     extra/httpd-ssl.conf:<FilesMatch "\.phps$">
     extra/httpd-ssl.conf:    SetHandler application/x-httpd-php-source
+```
