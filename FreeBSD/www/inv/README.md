@@ -2,9 +2,7 @@ originally from dev2.sjelab.net
 
 called as https://dev2.sjelab.net/inv/dsulog.php with -X POST
 
-1. TODO: does not respond to GET
-
-2. needs some apache2 config bits to let php be executable, port 80 and port 443 configs
+- needs some apache2 config bits to let php be executable, port 80 and port 443 configs
 httpd.conf:LoadModule php_module         libexec/apache24/libphp.so
 
 httpd.conf:#mod_php80
