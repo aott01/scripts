@@ -1,0 +1,7 @@
+#!/bin/sh
+SNMPD_BIN="/usr/local/sbin/snmpd"
+SNMPD_CONF="/usr/local/etc/snmpd.conf"
+
+if [ -x "$SNMPD_BIN" ] && [ -s "$SNMPD_CONF" ]; then
+    "$SNMPD_BIN" -c "$SNMPD_CONF"
+fi
