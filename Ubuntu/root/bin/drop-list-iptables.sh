@@ -24,7 +24,6 @@ cat /root/drop_v4.json | jq -r '.cidr' | grep -v null| while read CIDR_BLOCK; do
         iptables -A $CHAIN_NAME -s $CIDR_BLOCK -j DROP
     fi
 done
-# add RETURN rule with comment of timestamp of ruleset
 TIMESTAMP=`cat /root/drop_v4.json | jq -r .timestamp |grep -v null`
 THEN=`LANG=C date -d @${TIMESTAMP}`
 iptables -A $CHAIN_NAME -s 0.0.0.0/0 -j RETURN -m comment --comment "updated ${THEN}"
@@ -33,8 +32,8 @@ echo "Spamhaus DROP list rules applied to iptables chain $CHAIN_NAME."
 
 # Insert a rule into the INPUT chain to jump to the custom chain
 # Adjust INPUT to FORWARD or other chains as needed for your specific setup
-echo "just build table/chain "
+echo "just building this table/chain - need to *MANUALLY* connect to INPUT chain"
 #iptables -I INPUT 1 -j $CHAIN_NAME
 
-# Make the iptables rules persistent with
-# Debian/Ubuntu: sudo netfilter-persistent save
+# Optional: Persist the iptables rules (command varies by Linux distribution)
+# For Debian/Ubuntu: sudo netfilter-persistent save
