@@ -3,9 +3,10 @@
 # idea from https://arstechnica.com/gadgets/2020/02/how-fast-are-your-disks-find-out-the-open-source-way-with-fio/
 set -e
 
+MOUNTFS=${1:-/tmp}
 # temp directory for the file blobs
-mkdir /tmp/fio-tests
-cd /tmp/fio-tests
+mkdir ${MOUNTFS}/fio-tests
+cd ${MOUNTFS}/fio-tests
 
 echo first trial run
 fio --name=random-write --ioengine=posixaio --rw=randwrite --bs=4k --numjobs=1 --size=4g --iodepth=1 --runtime=60 --time_based --end_fsync=1
@@ -27,4 +28,4 @@ fio --name=random-write --ioengine=posixaio --rw=randwrite --bs=1m --size=16g --
 
 # cleanup temp directory
 cd /tmp/
-rm -rf /tmp/fio-tests
+rm -rf ${MOUNTFS}/fio-tests
