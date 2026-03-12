@@ -5,8 +5,8 @@
 # rewritten for 10.2+
 # logging to /var/log/ and syslog
 
-# call portsnap to update
-/root/bin/portsnap.sh
+# call portsnap to update (retired)
+# /root/bin/portsnap.sh
 
 echo "######## $0 ########" | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
 /bin/date | /usr/bin/tee -a /var/log/pkg-update-upgrade.log 2>&1
